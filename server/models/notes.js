@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
 
-const notes = new mongoose.Schema({
-    name: { type: String },
-    file: { type: String}
-});
+const noteFiles = new mongoose.Schema();
+const noteChunks = new mongoose.Schema();
 
-module.exports = mongoose.model("notes", notes);
+const Files = mongoose.model("notes.files", noteFiles);
+const Chunks = mongoose.model("notes.chunks", noteChunks);
+
+module.exports = {
+    Files,
+    Chunks
+}
+

@@ -17,7 +17,7 @@ export default function ResourceLink() {
       name: newLink.name,
       url: newLink.url,
     });
-    console.log(data);
+    fetchLinks();
   };
   useEffect(() => {
     fetchLinks();
@@ -25,15 +25,17 @@ export default function ResourceLink() {
 
   return (
     <div>
+    <input type="text" value={newLink.name} onChange={(e) => setNewLink({...newLink, name: e.currentTarget.value})}/><br></br>
       <input
         type="url"
         value={newLink.url}
-        onChange={(e) => setNewLink(e.currentTarget.value)}
+        onChange={(e) => setNewLink({ ...newLink, url: e.currentTarget.value})}
       ></input>
+      <br/>
       <button onClick={() => upload()}>upload</button>
       {rsLinks.map((link) => (
         <div key={link.url}>
-          <div>link.name</div>
+          <div>{link.name}</div>
           <a href={link.url} target="_blank" rel="noopener noreferrer">
             {link.url}
           </a>

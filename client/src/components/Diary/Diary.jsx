@@ -5,7 +5,7 @@ import Main from "./Main";
 import Sidebar from "./Sidebar";
 
 function Diary() {
-  const [notes, setNotes] = useState(JSON.parse(localStorage.notes || []));
+  const [notes, setNotes] = useState([]);
   const [activeNote, setActiveNote] = useState(false);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function Diary() {
   };
 
   return (
-    <div className="App">
+    <div className="Diary">
       <Sidebar
         notes={notes}
         onAddNote={onAddNote}

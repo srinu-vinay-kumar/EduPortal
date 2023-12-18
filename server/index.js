@@ -6,14 +6,11 @@ const { authUser } = require("./basicAuth");
 const connection = require("./db");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
-const { func } = require("joi");
 const { users } = require("./data");
 const multer = require("multer");
 const { GridFsStorage } = require("multer-gridfs-storage");
 const Grid = require("gridfs-stream");
 const mongoose = require("mongoose");
-const crypto = require("crypto");
-const path = require('path')
 const resourceLinks = require('./routes/resourceLinks')
 
 // database connection
@@ -31,17 +28,12 @@ const storage = new GridFsStorage({
   url: process.env.DB,
   file: (req, file) => {
     return new Promise((resolve, reject) => {
-      crypto.randomBytes(16, (err, buf) => {
-        if (err) {
-          return reject(err);
-        }
-        const filename = buf.toString("hex") + path.extname(file.originalname);
-        const fileInfo = {
-          filename,
-          bucketName: "notes",
-        };
-        resolve(fileInfo);
-      });
+      const filename = file.originalname;
+      const fileInfo = {
+        filename,
+        bucketName: "notes",
+      };
+      resolve(fileInfo);
     });
   },
 });
@@ -66,7 +58,6 @@ app.get("/notes", (req, res) => {
 });
 
 app.get("/notes/:notesname", (req, res) => {
-  console.log(req.params.notesname);
   gfs.files.findOne({filename: req.params.notesname}, (err, file) => {
     if (!file || file.length === 0) {
       return res.status(404).json({
