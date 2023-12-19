@@ -14,7 +14,7 @@ const SideBar = () => {
 
       <div>
       <NavLink to="/resource-link" className="d-flex align-items-center px-3 py-2">
-        Resorces links
+        Resources links
       </NavLink>
       </div>
       
