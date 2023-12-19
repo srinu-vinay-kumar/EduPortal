@@ -1,0 +1,22 @@
+.parent {
+  align-items: center;
+  margin:0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  /* position: relative; */
+  flex-direction: column;
+  /* box-sizing: border-box; */
+}
+
+.child {
+  border: 1px black dashed;
+  padding: 30px;
+  height: fit-content;
+}
+
+.fileinput {
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+

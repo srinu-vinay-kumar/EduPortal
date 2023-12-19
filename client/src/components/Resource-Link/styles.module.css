@@ -1,0 +1,38 @@
+.bgimg{
+  height: 532px;
+  padding-top: 10%;
+  background-image: url(pattern-bg.png);
+
+}
+.sidebar {
+  width: 20%;
+  background-color: aqua;
+}
+.Lmain{
+    margin-left: 26%;
+   
+    
+}
+.inputRL{
+  padding: 8px;
+  margin: 10px;
+  color: black;
+  width: 30%;
+}
+.Uploadbtn{
+  background: #3bb19b;
+  width: 101px;
+  color: white;
+  margin-left: 11%;
+  padding: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  margin-top: 18px;
+}
+.Uploadbtn:hover{
+  box-shadow:  inset 0 -3em 3em rgba(0, 200, 0, 0.3),
+  0 0 0 2px white,
+  0.3em 0.3em 1em rgba(19, 4, 4, 0.6);
+  color: white;
+}

@@ -1,0 +1,164 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+/* GLOBAL STYLES */
+
+body,
+.app {
+  font-family: Apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 16px;
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/lightpaperfibers.png);
+  
+}
+.app{
+  display: flex;
+
+}
+
+button {
+  background: none;
+  border: 0;
+ cursor: pointer;
+  color: #08c;
+}
+button:hover {
+  color: #04c;
+}
+
+/* SIDEBAR STYLES */
+
+.appSidebar {
+  width: 28%;
+  height: 100vh;
+  border-right: 2px solid #0c7a66;
+}
+
+.appSidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  color: #3bb19b;
+}
+.appSidebarHeader h1 {
+  margin: 0;
+}
+
+.appSidebarNotes {
+  height: calc(100vh - 78px);
+  overflow-y: scroll;
+}
+.appSidebarNote {
+  padding: 25px;
+  cursor: pointer;
+}
+.sidebarNoteTitle {
+  display: flex;
+  justify-content: space-between;
+}
+.appSidebarNote button {
+  color: crimson;
+}
+.appSidebarNote p {
+  margin: 10px 0;
+}
+.appSidebarNote small {
+  display: block;
+  color: #999;
+}
+
+
+.appSidebarNote:active,
+.appSidebarNote:active small {
+  background: #08c;
+  color: white;
+     
+}
+.activeBox{
+  margin-bottom: 18px;
+  padding: 20px;
+  border-bottom: 2px dashed #3bb19b;
+}
+
+.activeBox:active{
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 2px solid #3bb19b;
+  padding: 20px;
+}
+/* NOTE EDITOR/PREVIEW (MAIN) STYLES */
+
+.appMain {
+  width: 70%;
+  height: 100vh;
+}
+.appMainNoteEdit,
+.appMainNotePreview {
+  height: 50vh;
+}
+
+.noActiveNote {
+  width: 70%;
+  height: 100vh;
+  line-height: 100vh;
+  font-size: 2rem;
+  color: #999;
+}
+
+/* Editing */
+.appMainNoteEdit {
+  padding: 25px;
+}
+
+.appMainNoteEdit input,
+textarea {
+  display: block;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 100%;
+  height: calc(50vh - 130px);
+  padding: 10px;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+.appMainNoteEdit input {
+  height: 50px;
+  font-size: 2rem;
+}
+
+/* Preview */
+.appMainNotePreview {
+  border-top: 1px solid #ddd;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.preview-title {
+  padding: 25px 25px 0 25px;
+  margin: 0;
+}
+
+.markdownPreview {
+  padding: 0 25px 25px 25px;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+.del{
+  width: 15px;
+  margin-top: 14px;
+}
+.Diary{
+  display: flex;
+  flex-direction: row;
+}
+.add{
+  width: 20px;
+  height: 20px;
+}
